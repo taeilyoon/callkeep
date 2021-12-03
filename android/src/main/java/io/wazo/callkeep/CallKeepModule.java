@@ -268,7 +268,7 @@ public class CallKeepModule {
         extras.putString(EXTRA_CALLER_NAME, callerName);
         extras.putString(EXTRA_CALL_UUID, uuid);
 
-      
+        telecomManager.addNewIncomingCall(handle, extras);
     }
 
     
@@ -304,6 +304,7 @@ public class CallKeepModule {
         extras.putParcelable(TelecomManager.EXTRA_PHONE_ACCOUNT_HANDLE, handle);
         extras.putParcelable(TelecomManager.EXTRA_OUTGOING_CALL_EXTRAS, callExtras);
 
+        telecomManager.placeCall(uri, extras);
     }
 
     
